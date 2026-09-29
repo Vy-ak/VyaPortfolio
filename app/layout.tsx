@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AnimatedNav } from "@/components/ui/animated-nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AnimatedNav
+          items={[
+            {name: "Home", href: "#"},
+            {name: "About", href: "#about"},
+            {name: "Projects", href: "#"},
+            {name: "Contact", href: "#"}
+          ]}/>
+        {children}
+
+        </body>
     </html>
   );
 }
