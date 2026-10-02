@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -127,4 +127,76 @@
   html {
     @apply font-sans;
   }
+}
+
+.bg-grid{
+  background-image: 
+  linear-gradient(to right, var(--border) 1px, transparent 1px),
+  linear-gradient(to bottom, var(--border) 1px, transparent 1px),
+  ;
+
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Colour palette */
+:root {
+  --icy-blue: #a9cef4;
+  --iron-grey: #36494e;
+  --black: #000000;
+  --steel-blue: #7ea0b7;
+  --blue-slate: #597081;
+}
+
+@theme inline {
+  --color-icy-blue: var(--icy-blue);
+  --color-iron-grey: var(--iron-grey);
+  --color-steel-blue: var(--steel-blue);
+  --color-blue-slate: var(--blue-slate);
+  --color-brand: var(--brand);
+  --color-brand-glow: var(--brand-glow);
+}
+
+/* Warna buat light mode */
+:root {
+  --background: color-mix(in oklab, var(--icy-blue) 10%, white);
+  --foreground: var(--black);
+  --card: #ffffff;
+  --card-foreground: var(--black);
+  --popover: #ffffff;
+  --popover-foreground: var(--black);
+  --primary: var(--iron-grey);
+  --primary-foreground: #ffffff;
+  --muted: color-mix(in oklab, var(--icy-blue) 25%, white);
+  --muted-foreground: var(--blue-slate);
+  --accent: color-mix(in oklab, var(--icy-blue) 30%, white);
+  --accent-foreground: var(--black);
+  --border: color-mix(in oklab, var(--steel-blue) 35%, white);
+  --input: color-mix(in oklab, var(--steel-blue) 35%, white);
+  --ring: var(--steel-blue);
+
+  --brand: var(--blue-slate);
+  --brand-glow: var(--icy-blue);   
+}
+
+/* Warna buat dark mode */
+.dark {
+  --background: var(--black);
+  --foreground: color-mix(in oklab, var(--icy-blue) 15%, white);
+  --card: color-mix(in oklab, var(--iron-grey) 35%, black);
+  --card-foreground: color-mix(in oklab, var(--icy-blue) 15%, white);
+  --popover: color-mix(in oklab, var(--iron-grey) 35%, black);
+  --popover-foreground: color-mix(in oklab, var(--icy-blue) 15%, white);
+  --primary: var(--icy-blue);
+  --primary-foreground: var(--black);
+  --muted: color-mix(in oklab, var(--iron-grey) 55%, black);
+  --muted-foreground: var(--steel-blue);
+  --accent: color-mix(in oklab, var(--iron-grey) 55%, black);
+  --accent-foreground: color-mix(in oklab, var(--icy-blue) 15%, white);
+  --border: color-mix(in oklab, var(--iron-grey) 70%, black);
+  --input: color-mix(in oklab, var(--iron-grey) 70%, black);
+  --ring: var(--steel-blue);
+
+  --brand: var(--icy-blue);
+  --brand-glow: var(--blue-slate);
 }
