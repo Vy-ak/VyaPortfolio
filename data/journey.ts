@@ -1,11 +1,13 @@
 export type Stop = {
-    type: "Projects" | "Milestone";
+    type: "Projects" | "Milestone" | "Experience" | "Organization";
     date: string;
     title: string;
     description: string;
     tags?: string[];
     github?: string;
     demo?: string;
+    link?: string;
+    linkLabel?: string;
     current?: boolean;
 };
 
@@ -75,3 +77,70 @@ export const journey: Stop[] = [
         current: true
     },
 ]
+
+export const experiences: Stop[] = [
+    {
+        type: "Organization",
+        date: "September 2022 — September 2023",
+        title: "Programming Division Manager — IT Doeta",
+        description: "Led the programming division of the IT Doeta extracurricular. Managed division activities and mentored members in programming.",
+        tags: ["Organization", "Leadership", "Programming", "IT Doeta"],
+    },
+    {
+        type: "Organization",
+        date: "January 2025 — March 2026",
+        title: "BNCC — LnT Activist",
+        description: "Activist in the Learning and Training (LnT) division at BNCC. Assisted in training sessions and organizational activities.",
+        tags: ["BNCC", "Learning and Training", "Organization"],
+    },
+    {
+        type: "Experience",
+        date: "24 — 25 November 2025",
+        title: "Teaching Assistant — Swift Workshop @ Al Azhar Bintaro",
+        description: "Freelance teaching assistant for a Swift workshop for students. Helped participants follow the material and finish their assignments.",
+        tags: ["Freelance", "Teaching Assistant", "Swift", "Al Azhar Bintaro"],
+        link: "https://www.instagram.com/usn_vy/p/DU0OQ0jkgZJ/",
+        linkLabel: "Instagram post",
+    },
+    {
+        type: "Experience",
+        date: "31 January 2026",
+        title: "Teaching Assistant — Swift Workshop @ Al Azhar 19 Bekasi",
+        description: "Freelance teaching assistant for a Swift workshop for students. Helped participants follow the material and finish their assignments.",
+        tags: ["Freelance", "Teaching Assistant", "Swift", "Al Azhar Bekasi"],
+        link: "https://www.instagram.com/usn_vy/p/DUzBSCDE7TB/",
+        linkLabel: "Instagram post",
+    },
+    {
+        type: "Organization",
+        date: "April 2026 — Present",
+        title: "BNCC — LnT Staff",
+        description: "Staff in the Learning and Training (LnT) division at BNCC. Responsible for running training programs and developing learning materials.",
+        tags: ["BNCC", "Learning and Training", "Organization"],
+        current: true,
+    },
+    {
+        type: "Organization",
+        date: "June 2026 — Present",
+        title: "Cosplay Thieves — Developer",
+        description: "Maintain community systems: CT Media and CT Officer Discord bots plus the CT Dashboard for staff operations.",
+        tags: ["Community", "Discord", "Next.js"],
+        current: true,
+    },
+    {
+        type: "Experience",
+        date: "July 2026",
+        title: "Freelance Web Developer — BKS SMPIT Alfityan Tangerang",
+        description: "Worked directly with customers to ship a digital yearbook website, convincing parents that a web-based yearbook is more reliable than print.",
+        tags: ["Freelance", "JavaScript", "Client Work"],
+    },
+    {
+        type: "Experience",
+        date: "22 September 2026",
+        title: "Teaching Assistant — Swift Workshop @ Al Azhar Bintaro",
+        description: "Freelance teaching assistant for a Swift workshop for teachers. Ensured everyone completed the workshop assignment and helped everyone understand what was happening.",
+        tags: ["Freelance", "Teaching Assistant", "Swift", "Al Azhar Bintaro"],
+        link: "https://www.instagram.com/usn_vy/p/Ddl1-tVn505/",
+        linkLabel: "Instagram post",
+    },
+];
