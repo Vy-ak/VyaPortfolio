@@ -30,12 +30,12 @@ export default function Activity() {
           center
           eyebrow="Consistency"
           title="Activity"
-          description="My GitHub contributions in the last year. Hover a day, or flip to 3D."
+          description="My public GitHub contributions in the last year — and even more in private ones!"
         />
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <ContributionSkyline data={data} unit="contribution" />
+        <ContributionSkyline data={data} unit="public contribution" />
       </FadeIn>
     </section>
   );
