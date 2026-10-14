@@ -17,7 +17,7 @@ export default function Home() {
         <Activity />
       </main>
       <footer className="border-t py-8 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Vya · Built with Next.js, Tailwind & Framer Motion
+        © {new Date().getFullYear()} Verdy · Built with Next.js, Tailwind & Framer Motion
       </footer>
     </>
   );

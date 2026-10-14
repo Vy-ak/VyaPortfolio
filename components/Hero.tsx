@@ -23,7 +23,7 @@ export default function Hero() {
 
         <FadeIn delay={0.1}>
           <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-7xl">
-            Hi, I&apos;m Vya —{" "}
+            Hi, I&apos;m Verdy —{" "}
             <span className="bg-linear-to-r from-iron-grey via-blue-slate to-steel-blue bg-clip-text text-transparent dark:from-icy-blue dark:via-icy-blue dark:to-steel-blue">
               Software Engineer, Web Developer
             </span>

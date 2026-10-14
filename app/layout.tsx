@@ -10,21 +10,21 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://vya-portfolio.vercel.app"),
   title: {
-    default: "Vya — Software Engineer Intern Candidate",
-    template: "%s | Vya",
+    default: "Verdy — Software Engineer Intern Candidate",
+    template: "%s | Verdy",
   },
   description:
     "Verdy Akbar Rafsanjani — software engineer intern candidate building web applications and automation tools, from full-stack dashboards to Discord bots.",
   keywords: [
     "Verdy Akbar Rafsanjani",
-    "Vya",
+    "Verdy",
     "Software Engineer Intern",
     "Web Developer",
     "Next.js",
     "Portfolio",
   ],
   openGraph: {
-    title: "Vya — Software Engineer Intern Candidate",
+    title: "Verdy — Software Engineer Intern Candidate",
     description:
       "Verdy Akbar Rafsanjani — software engineer intern candidate building web applications and automation tools.",
     type: "website",
