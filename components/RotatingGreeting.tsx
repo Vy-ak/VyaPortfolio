@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 const GREETINGS = [
   { text: "Hi", lang: "en", name: "English" },
@@ -14,14 +14,16 @@ const GREETINGS = [
 ];
 
 export default function RotatingGreeting() {
+  const reducedMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (reducedMotion) return;
     const id = setInterval(() => setIndex((i) => (i + 1) % GREETINGS.length), 2000);
     return () => clearInterval(id);
-  }, []);
+  }, [reducedMotion]);
 
-  const greeting = GREETINGS[index];
+  const greeting = GREETINGS[reducedMotion ? 0 : index];
 
   return (
     <>
@@ -30,14 +32,14 @@ export default function RotatingGreeting() {
       <span aria-hidden className="inline-block">
         <AnimatePresence mode="wait">
           <motion.span
-            key={greeting.text}
+            key={reducedMotion ? "hi" : greeting.text}
             lang={greeting.lang}
             title={greeting.name}
             className="inline-block"
-            initial={{ y: "0.4em", opacity: 0, filter: "blur(8px)" }}
-            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            exit={{ y: "-0.4em", opacity: 0, filter: "blur(8px)" }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            initial={reducedMotion ? false : { y: "0.4em", opacity: 0, filter: "blur(8px)" }}
+            animate={reducedMotion ? { opacity: 1 } : { y: 0, opacity: 1, filter: "blur(0px)" }}
+            exit={reducedMotion ? undefined : { y: "-0.4em", opacity: 0, filter: "blur(8px)" }}
+            transition={reducedMotion ? { duration: 0 } : { duration: 0.35, ease: "easeOut" }}
           >
             {greeting.text}
           </motion.span>

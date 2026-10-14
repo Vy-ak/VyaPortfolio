@@ -26,12 +26,18 @@ export default function Contact() {
             I&apos;m looking for internships and fun projects. My inbox is always open.
           </p>
 
-          <a
-            href={`mailto:${EMAIL}`}
-            className="relative mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
-          >
-            <Mail className="size-4" /> {EMAIL}
-          </a>
+          {EMAIL ? (
+            <a
+              href={`mailto:${EMAIL}`}
+              className="relative mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
+            >
+              <Mail className="size-4" /> {EMAIL}
+            </a>
+          ) : (
+            <p className="relative mt-8 text-sm text-muted-foreground">
+              Contact via GitHub or LinkedIn below.
+            </p>
+          )}
 
           <div className="relative mt-8 flex justify-center gap-6 text-sm text-muted-foreground">
             {LINKS.map((link) => (

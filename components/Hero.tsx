@@ -1,6 +1,5 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import FadeIn from "./FadeIn";
-import RotatingGreeting from "./RotatingGreeting";
 
 export default function Hero() {
   return (
@@ -23,35 +22,50 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-7xl">
-                <RotatingGreeting />, I&apos;m Vya.
-                <br />
-                <span className="bg-linear-to-r from-iron-grey via-blue-slate to-steel-blue bg-clip-text text-transparent dark:from-icy-blue dark:via-icy-blue dark:to-steel-blue">
-                    I Design, Build, Develop, and Maintain Programs.
-                </span>
-            </h1>
+          <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-7xl">
+            Hi, I&apos;m Vya —{" "}
+            <span className="bg-linear-to-r from-iron-grey via-blue-slate to-steel-blue bg-clip-text text-transparent dark:from-icy-blue dark:via-icy-blue dark:to-steel-blue">
+              Software Engineer, Web Developer
+            </span>
+          </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Computer Science student who loves frontend and UI design. Scroll down to follow my
-            journey, one project at a time.
+            I build web applications and automation tools, from full-stack dashboards to Discord bots
+            used by an active community.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
+              >
+                Get in touch
+              </a>
+              <a
+                href="/cv-indonesian.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
+              >
+                CV (Indonesian) <Download className="size-4" />
+              </a>
+              <a
+                href="/cv-english.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
+              >
+                CV (English) <Download className="size-4" />
+              </a>
+            </div>
             <a
               href="#journey"
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
             >
               See my journey <ArrowDown className="size-4" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
-            >
-              Get in touch
             </a>
           </div>
         </FadeIn>

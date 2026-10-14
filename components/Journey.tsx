@@ -1,93 +1,34 @@
 "use client";
-import { useRef, useState } from "react";
-import { AnimatePresence, motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Code } from "lucide-react";
-import { experiences, journey, type Stop } from "@/data/journey";
+import { experiences, type Stop } from "@/data/journey";
 import FadeIn from "./FadeIn";
 import SectionHeading from "./SectionHeading";
 
 const LINE_POS = "left-[15px] md:left-[calc(50%-1px)]";
 
-type TabId = "projects" | "experience";
-
-const TABS: { id: TabId; label: string }[] = [
-  { id: "projects", label: "Project Journey" },
-  { id: "experience", label: "Experience & Organization" },
-];
-
-const HEADING: Record<TabId, { eyebrow: string; title: string; description: string }> = {
-  projects: {
-    eyebrow: "The road so far",
-    title: "My journey",
-    description: "Every project I've built, in the order I built it.",
-  },
-  experience: {
-    eyebrow: "Beyond code",
-    title: "Experience & Organization",
-    description: "Roles, communities, and teams I've been part of.",
-  },
-};
-
 export default function Journey() {
-  const [tab, setTab] = useState<TabId>("projects");
-  const heading = HEADING[tab];
-
   return (
     <section id="journey" className="mx-auto w-full max-w-5xl px-6 py-24">
       <FadeIn>
         <SectionHeading
           center
-          eyebrow={heading.eyebrow}
-          title={heading.title}
-          description={heading.description}
+          eyebrow="Beyond code"
+          title="Experience & Organization"
+          description="Roles, communities, and teams I've been part of."
         />
       </FadeIn>
 
-      <FadeIn delay={0.05}>
-        <div role="tablist" aria-label="Journey categories" className="mb-14 flex justify-center">
-          <div className="inline-flex rounded-full border bg-card p-1 shadow-sm">
-            {TABS.map((t) => {
-              const active = t.id === tab;
-              return (
-                <button
-                  key={t.id}
-                  role="tab"
-                  aria-selected={active}
-                  onClick={() => setTab(t.id)}
-                  className={`relative rounded-full px-5 py-2 text-sm font-medium transition-colors ${
-                    active ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {active && (
-                    <motion.span
-                      layoutId="journey-tab-pill"
-                      className="absolute inset-0 rounded-full bg-foreground"
-                      transition={{ type: "spring", damping: 22, stiffness: 320 }}
-                    />
-                  )}
-                  <span className="relative z-10">{t.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+      <FadeIn delay={0.1}>
+        <RoadTimeline stops={experiences} />
       </FadeIn>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={tab}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        >
-          {tab === "projects" ? (
-            <RoadTimeline stops={journey} />
-          ) : (
-            <RoadTimeline stops={experiences} />
-          )}
-        </motion.div>
-      </AnimatePresence>
+      <FadeIn delay={0.2}>
+        <p className="mt-12 text-center text-sm font-medium text-muted-foreground">
+          And much more to come.
+        </p>
+      </FadeIn>
     </section>
   );
 }
@@ -143,7 +84,7 @@ function JourneyItem({ stop, side }: { stop: Stop; side: "left" | "right" }) {
 }
 
 function Card({ stop, alignRight }: { stop: Stop; alignRight: boolean }) {
-  const isSolid = stop.type === "Projects" || stop.type === "Experience";
+  const isSolid = stop.type === "Experience" || stop.type === "Organization";
   const align = alignRight ? "md:text-right" : "";
   const justify = alignRight ? "md:justify-end" : "";
 

@@ -11,7 +11,7 @@ export type Stop = {
     current?: boolean;
 };
 
-export const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ""
+export const EMAIL = (process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "").trim();
 
 export const journey: Stop[] = [
     {

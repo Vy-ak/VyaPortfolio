@@ -7,6 +7,7 @@ import{
     useMotionValueEvent,
     type Variants,
     spring,
+    useReducedMotion,
 } from "framer-motion"
 
 import { Navigation, Menu } from "lucide-react"
@@ -126,6 +127,7 @@ interface animatedNavProps {
 
 export function AnimatedNav({ items = defaultNavItem, className }: animatedNavProps){
     const [isExpanded, setExpanded] = React.useState(true)
+    const reducedMotion = useReducedMotion();
 
     const { scrollY } = useScroll();
     const lastScrollY = React.useRef(0);
@@ -153,13 +155,13 @@ export function AnimatedNav({ items = defaultNavItem, className }: animatedNavPr
 
 
     return (
-        <div className={cn("fixed top-6 left-1/2 -translate-x-1/2 z-50", className)}>
+        <div role="navigation" aria-label="Primary" aria-expanded={isExpanded} className={cn("fixed top-6 left-1/2 -translate-x-1/2 z-50", className)}>
             <motion.nav
-                initial={{ y: -80, opacity: 0}}
+                initial={reducedMotion ? false : { y: -80, opacity: 0}}
                 animate={isExpanded ? "expanded" : "collapsed"}
                 variants={ContainerVariant}
-                whileHover={!isExpanded ? {scale: 1.1} : {}}
-                whileTap={!isExpanded ? {scale: 0.95} : {}}
+                whileHover={!isExpanded && !reducedMotion ? {scale: 1.1} : {}}
+                whileTap={!isExpanded && !reducedMotion ? {scale: 0.95} : {}}
                 onClick={handleNavClick}
                 className={cn(
                     "relative flex h-12 items-center overflow-hidden rounded-full border bg-background/80 shadow-lg backdrop-blur-sm",
@@ -195,6 +197,19 @@ export function AnimatedNav({ items = defaultNavItem, className }: animatedNavPr
                         <Menu className="h-6 w-6"/>
                     </motion.div>
                 </div>
+
+                {!isExpanded && (
+                  <button
+                    type="button"
+                    aria-expanded={false}
+                    aria-label="Expand navigation menu"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setExpanded(true);
+                    }}
+                    className="absolute inset-0 z-20 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  />
+                )}
             </motion.nav>
         </div>
     );

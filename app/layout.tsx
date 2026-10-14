@@ -8,8 +8,27 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vya — Developer",
-  description: "CS student and frontend developer. Follow my journey, one project at a time.",
+  metadataBase: new URL("https://vya-portfolio.vercel.app"),
+  title: {
+    default: "Vya — Software Engineer Intern Candidate",
+    template: "%s | Vya",
+  },
+  description:
+    "Verdy Akbar Rafsanjani — software engineer intern candidate building web applications and automation tools, from full-stack dashboards to Discord bots.",
+  keywords: [
+    "Verdy Akbar Rafsanjani",
+    "Vya",
+    "Software Engineer Intern",
+    "Web Developer",
+    "Next.js",
+    "Portfolio",
+  ],
+  openGraph: {
+    title: "Vya — Software Engineer Intern Candidate",
+    description:
+      "Verdy Akbar Rafsanjani — software engineer intern candidate building web applications and automation tools.",
+    type: "website",
+  },
 };
 
 const themeScript = `
