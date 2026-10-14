@@ -5,7 +5,8 @@ import FadeIn from "./FadeIn";
 const LINKS = [
   { name: "GitHub", href: "https://github.com/Vy-ak" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/verdy-akbar-6b13882a8/?isSelfProfile=true" },
-  { name: "Résumé", href: "/resume.pdf" },
+  { name: "CV (English)", href: "/cv-english.pdf" },
+  { name: "CV (Indonesian)", href: "/cv-indonesian.pdf" },
 ];
 
 export default function Contact() {
