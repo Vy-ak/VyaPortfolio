@@ -163,6 +163,7 @@ export function AnimatedNav({ items = defaultNavItem, className }: animatedNavPr
                 whileHover={!isExpanded && !reducedMotion ? {scale: 1.1} : {}}
                 whileTap={!isExpanded && !reducedMotion ? {scale: 0.95} : {}}
                 onClick={handleNavClick}
+                transition={reducedMotion ? { duration: 0 } : undefined}
                 className={cn(
                     "relative flex h-12 items-center overflow-hidden rounded-full border bg-background/80 shadow-lg backdrop-blur-sm",
                     !isExpanded && "cursor-pointer justify-center"
@@ -184,7 +185,7 @@ export function AnimatedNav({ items = defaultNavItem, className }: animatedNavPr
                         href={item.href}
                         variants={itemVariants}
                         onClick={(e) => e.stopPropagation()}
-                        className="cursor-pointer px-2 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                        className="cursor-pointer rounded px-2 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                             {item.name}
                         </motion.a>
                     ))}

@@ -42,28 +42,28 @@ export default function Hero() {
             <div className="flex flex-wrap justify-center gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
+                className="inline-flex items-center rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 Get in touch
               </a>
               <a
                 href="/cv-indonesian.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
+                className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 CV (Indonesian) <Download className="size-4" />
               </a>
               <a
                 href="/cv-english.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted"
+                className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-6 py-3 text-sm font-medium backdrop-blur transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 CV (English) <Download className="size-4" />
               </a>
             </div>
             <a
               href="#journey"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               See my journey <ArrowDown className="size-4" />
             </a>
