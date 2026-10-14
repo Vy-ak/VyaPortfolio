@@ -22,7 +22,7 @@ export default function Projects() {
             description={
               <>
                 <span>Staff-facing dashboard and public site for the Cosplay Thieves community (1,835 members) — landing, internal operations, and admin tooling.</span>
-                <span className="mt-3 inline-flex gap-4 text-sm font-medium text-muted-foreground">
+                <span className="mt-3 flex gap-4 text-sm font-medium text-muted-foreground">
                   <a href="https://www.cosplaythieves.com/" target="_blank" className="inline-flex items-center gap-1 hover:text-brand">
                     Live Website
                   </a>
@@ -37,6 +37,7 @@ export default function Projects() {
             eyebrow="Discord Bot"
             title="CT Officer"
             description="Security and moderation bot: roles, tickets, onboarding, scam detection with rate-limit safeguards and logging across an active community."
+            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/ct-officer.png)] bg-cover bg-top" />}
             className="lg:col-span-3 lg:rounded-bl-4xl"
           />
           <BentoCard
@@ -44,7 +45,7 @@ export default function Projects() {
             eyebrow="Discord Bot"
             title="CT Media"
             description="Talent/streamer operations bot: dashboards, social media monitoring, and payment tracking for community staff."
-            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/ct-media.png)] bg-cover bg-center" />}
+            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/ct-media.png)] bg-cover bg-top" />}
             className="lg:col-span-3"
           />
           <BentoCard
@@ -54,7 +55,7 @@ export default function Projects() {
             description={
               <>
                 <span>Stunting prediction web app for the Artificial Intelligence course, trained on Kaggle datasets.</span>
-                <span className="mt-3 inline-flex gap-4 text-sm font-medium text-muted-foreground">
+                <span className="mt-3 flex gap-4 text-sm font-medium text-muted-foreground">
                   <a href="https://vyakraf.pythonanywhere.com/" target="_blank" className="inline-flex items-center gap-1 hover:text-brand">
                     Live demo
                   </a>
@@ -82,7 +83,7 @@ export default function Projects() {
             description={
               <>
                 <span>Full-stack web app built for the Software Engineering & Software Architecture course.</span>
-                <span className="mt-3 inline-flex gap-4 text-sm font-medium text-muted-foreground">
+                <span className="mt-3 flex gap-4 text-sm font-medium text-muted-foreground">
                   <a href="https://map-score.vercel.app/" target="_blank" className="inline-flex items-center gap-1 hover:text-brand">
                     Live demo
                   </a>
