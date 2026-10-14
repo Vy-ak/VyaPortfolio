@@ -16,6 +16,7 @@ export default function Projects() {
       <FadeIn delay={0.1}>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-6 lg:grid-rows-3">
           <BentoCard
+            key="cosplay-thieves-website"
             eyebrow="Community Website"
             title="Cosplay Thieves Website"
             description={
@@ -32,13 +33,14 @@ export default function Projects() {
             className="max-lg:rounded-t-4xl lg:col-span-6 lg:rounded-t-4xl"
           />
           <BentoCard
+            key="ct-officer"
             eyebrow="Discord Bot"
             title="CT Officer"
             description="Security and moderation bot: roles, tickets, onboarding, scam detection with rate-limit safeguards and logging across an active community."
-            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/ct-officer.png)] bg-cover bg-center" />}
             className="lg:col-span-3 lg:rounded-bl-4xl"
           />
           <BentoCard
+            key="ct-media"
             eyebrow="Discord Bot"
             title="CT Media"
             description="Talent/streamer operations bot: dashboards, social media monitoring, and payment tracking for community staff."
@@ -46,6 +48,7 @@ export default function Projects() {
             className="lg:col-span-3"
           />
           <BentoCard
+            key="growth-forecaster"
             eyebrow="AI Web App"
             title="Growth Forecaster"
             description={
@@ -65,6 +68,7 @@ export default function Projects() {
             className="lg:col-span-2"
           />
           <BentoCard
+            key="bks-smpit"
             eyebrow="Freelance Web App"
             title="BKS SMPIT Alfityan"
             description="Digital yearbook website delivered directly to parents, proving a web-based yearbook is more reliable than print."
@@ -72,6 +76,7 @@ export default function Projects() {
             className="lg:col-span-2"
           />
           <BentoCard
+            key="mapscore"
             eyebrow="Full-stack Web App"
             title="MapScore"
             description={
