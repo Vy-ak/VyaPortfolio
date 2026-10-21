@@ -101,18 +101,7 @@ export default function Projects() {
             eyebrow="Coming Soon"
             title="Nerdius"
             description="What if learning became an RPG game? Nerdius gamifies learning by turning PDFs into quizzes implemented in an RPG-style experience."
-            graphic={
-              <div key="graphic" className="absolute inset-0 overflow-hidden bg-background">
-                <div aria-hidden className="bg-grid absolute inset-0 opacity-60" />
-                <div aria-hidden className="absolute -left-24 -top-24 size-72 rounded-full bg-brand/20 blur-3xl" />
-                <div aria-hidden className="absolute -bottom-28 -right-20 size-80 rounded-full bg-brand-glow/30 blur-3xl" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="select-none text-5xl font-semibold tracking-tight text-foreground/10 sm:text-6xl">
-                    NERDIUS
-                  </span>
-                </div>
-              </div>
-            }
+            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/nerdius.png)] bg-cover bg-center" />}
             className="lg:col-span-3 lg:rounded-bl-4xl"
           />
           <BentoCard
