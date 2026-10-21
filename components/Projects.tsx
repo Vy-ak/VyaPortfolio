@@ -14,7 +14,7 @@ export default function Projects() {
         />
       </FadeIn>
       <FadeIn delay={0.1}>
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-6 lg:grid-rows-3">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-6 lg:grid-rows-4">
           <BentoCard
             key="cosplay-thieves-website"
             eyebrow="Community Website"
@@ -38,7 +38,7 @@ export default function Projects() {
             title="CT Officer"
             description="Security and moderation bot: roles, tickets, onboarding, scam detection with rate-limit safeguards and logging across an active community."
             graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/ct-officer.png)] bg-cover bg-top" />}
-            className="lg:col-span-3 lg:rounded-bl-4xl"
+            className="lg:col-span-3"
           />
           <BentoCard
             key="ct-media"
@@ -94,7 +94,23 @@ export default function Projects() {
               </>
             }
             graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/mapscore.png)] bg-cover bg-center" />}
-            className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
+            className="lg:col-span-2"
+          />
+          <BentoCard
+            key="nerdius"
+            eyebrow="Coming Soon"
+            title="Nerdius"
+            description="What if learning became an RPG game? Nerdius gamifies learning by turning PDFs into quizzes implemented in an RPG-style experience."
+            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/nerdius.png)] bg-cover bg-center" />}
+            className="lg:col-span-3 lg:rounded-bl-4xl"
+          />
+          <BentoCard
+            key="habisin"
+            eyebrow="Coming Soon"
+            title="Habisin"
+            description="Instead of throwing away leftover ingredients, imagine all the dishes you could make. Habisin aims to reduce food waste by helping you use what's still good in your fridge."
+            graphic={<div key="graphic" className="absolute inset-0 bg-[url(/projects/habisin.png)] bg-cover bg-center" />}
+            className="max-lg:rounded-b-4xl lg:col-span-3 lg:rounded-br-4xl"
           />
         </div>
       </FadeIn>
